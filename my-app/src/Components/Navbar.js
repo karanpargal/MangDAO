@@ -10,23 +10,23 @@ const Navbar = () => {
   const handleClose = () => setNav(!nav);
 
   return (
-    <div className="w-screen h-[80px] z-10 bg-zinc-50 fixed drop-shadow-lg">
+    <div className="w-screen h-[80px] z-10 bg-slate-100 fixed drop-shadow-lg">
       <div className="px-2 flex justify-between items-center w-full h-full">
         <div className="flex items-center">
           <h1 className="text-3xl font-bold mr-4 ml-10 sm:text-4xl">LOGO</h1>
-          <ul className="hidden text-white md:flex ml-[460px] bg-gradient-to-r from-violet-300 to-violet-600 rounded-2xl px-12 z-2">
-            <li>
+          <ul className="hidden text-black md:flex ml-[460px] border-2 border-violet-300 rounded-xl px-12 z-2 ">
+            <li className="hover:underline underline-offset-2 decoration-violet-500">
              
                 Home
               
             </li>
-            <li>
+            <li className="hover:underline underline-offset-2 decoration-violet-500">
              
                 About
            
             </li>
         
-            <li>
+            <li className="hover:underline underline-offset-2 decoration-violet-500">
            
               Services
              

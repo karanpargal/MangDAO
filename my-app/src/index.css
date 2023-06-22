@@ -22,8 +22,8 @@ code {
     @apply p-4
   }
   button {
-    @apply text-black border border-violet-300
-   hover:bg-violet-200  hover:text-purple-950 rounded-md
+    @apply text-black border border-2 border-violet-300
+   hover:bg-violet-200  hover:text-purple-950 rounded-xl
   }
   
 
