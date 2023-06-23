@@ -9,9 +9,11 @@
     "@particle-network/connect": "^0.14.1",
     "@particle-network/connect-react-ui": "^0.14.1",
     "@particle-network/provider": "^0.14.1",
+    "@polybase/client": "^0.6.2",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "axios": "^1.4.0",
     "crypto-browserify": "^3.12.0",
     "heroicons": "^2.0.18",
     "react": "^18.2.0",
@@ -19,7 +21,8 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "6",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.0"
+    "web-vitals": "^2.1.0",
+    "web3": "^4.0.1"
   },
   "scripts": {
     "start": "set PORT=3001 && react-app-rewired start",
