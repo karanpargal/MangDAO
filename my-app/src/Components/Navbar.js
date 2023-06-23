@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
-
-
+import '@particle-network/connect-react-ui/dist/index.css';
+import { ConnectButton } from '@particle-network/connect-react-ui';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -34,10 +34,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="hidden md:flex pr-4 ">
-          <button className="border-none bg-transparent text-black mr-4  px-8  py-3">
-            Sign In
-          </button>
-          <button className="px-8 py-3 ">Sign Up</button>
+          <ConnectButton />
         </div>
         <div className="md:hidden mr-4 " onClick={handleClick}>
           {!nav ? <MenuIcon className="w-5" /> : <XIcon className="w-5" />}
@@ -66,10 +63,7 @@ const Navbar = () => {
         </li>
 
         <div className="flex flex-col my-4">
-          <button className="bg-transparent text-indigo-600 px-8 py-3 mb-4 ">
-            Sign In
-          </button>
-          <button className="px-8 py-3">Sign Out</button>
+          <ConnectButton />
         </div>
       </ul>
     </div>

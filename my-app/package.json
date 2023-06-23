@@ -1,24 +1,31 @@
 {
   "name": "my-app",
   "version": "0.1.0",
+  "port": 3001,
   "private": true,
   "dependencies": {
     "@heroicons/react": "v1",
+    "@particle-network/auth": "^0.14.1",
+    "@particle-network/connect": "^0.14.1",
+    "@particle-network/connect-react-ui": "^0.14.1",
+    "@particle-network/provider": "^0.14.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "crypto-browserify": "^3.12.0",
     "heroicons": "^2.0.18",
     "react": "^18.2.0",
+    "react-app-rewired": "^2.2.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "6",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "set PORT=3001 && react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject"
   },
   "eslintConfig": {
     "extends": [
