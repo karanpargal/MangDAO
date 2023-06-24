@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Superteam from "../../Assests/Superteam.jpg";
 import DAOcards from "./DAOcards";
+import Navbar from "../Navbar";
+import axios from "axios";
 import {motion} from "framer-motion"
 
 const DAOdetails = () => {
@@ -19,58 +21,32 @@ const DAOdetails = () => {
       
     }
   }
-  const DAOcardsData = [
-    {
-      Image: Superteam,
-      Heading: "Superteam",
-      Description: "Lorem ipsum matilda elit da capsus whateva list gdreol ",
-      Button: "Join",
-    },
-    {
-      Image: Superteam,
-      Heading: "Superteam",
-      Description: "Lorem ipsum matilda elit da capsus whateva list gdreol ",
-      Button: "Join",
-    },
+  const [DAOcardsData, setDAOcardsData] = React.useState([]);
 
-    {
-      Image: Superteam,
-      Heading: "Superteam",
-      Description: "Lorem ipsum matilda elit da capsus whateva list gdreol ",
-      Button: "Join",
-    },
+  useEffect(() => {
+    async function fetchData() {
+      const { data } = await axios.get("http://localhost:8000/getDAO");
+      console.log(data);
+      const DAOdata = data.data.map((DAO) => {
+        return {
+          Image: Superteam,
+          Heading: DAO.data.name,
+          Description: DAO.data.description,
+        };
+      });
+      setDAOcardsData(DAOdata);
+      return DAOdata;
+    }
+    fetchData();
+  }, []);
 
-    {
-      Image: Superteam,
-      Heading: "Superteam",
-      Description: "Lorem ipsum matilda elit da capsus whateva list gdreol ",
-      Button: "Join",
-    },
-
-    {
-      Image: Superteam,
-      Heading: "Superteam",
-      Description: "Lorem ipsum matilda elit da capsus whateva list gdreol ",
-      Button: "Join",
-    },
-  ];
-  console.log(DAOcardsData);
   return (
-    <div id="ListDetails">
-      {/* <div className="">
-        <DAOcards DAOcards={DAOcardsData[0]} />
-        <DAOcards DAOcards={DAOcardsData[1]} />
-        <DAOcards DAOcards={DAOcardsData[2]} />
-        <DAOcards DAOcards={DAOcardsData[3]} />
-        <DAOcards DAOcards={DAOcardsData[4]} />
-       
-      </div> */}
-
-      <div>
-        <motion.div>
-          { DAOcardsData.map((data) => {
-            return <DAOcards DAOcards={data} animate="visible" initial="hidden" variants={DAOcardsVariant} />})}
-        </motion.div>
+    <div>
+      <Navbar />
+      <div className="grid grid-cols-3 gap-4 mx-10 pt-20">
+        {DAOcardsData.map((data) => {
+          return <DAOcards DAOcards={data} />;
+        })}
       </div>
     </div>
    
