@@ -17,13 +17,14 @@ const Navbar = () => {
   const handleClose = () => setNav(!nav);
 
   async function handleConnect() {
-    const message = "Please sign this message to connect to the app";
-    const result = await provider.request({method:"personal_sign", params: [message, account]});
-    console.log(result);
-    const { data } = await axios.post("http://localhost:8000/getPolybaseDB", {
-      sign: result,
-      publicKey: account,
-    });
+    // const { data } = await axios.post("http://localhost:8000/addBounty", {
+    //   dao: "TestDAO",
+    //   title: "TestBounty",
+    //   details: "TestBountyDetails",
+    //   deadline: 2,
+    //   prize: "100 USDC",
+    // });
+    const { data } = await axios.get("http://localhost:8000/getSingleDAO?dao=TestDAO")
     console.log(data);
   }
 
