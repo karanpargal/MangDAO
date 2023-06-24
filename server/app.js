@@ -12,7 +12,8 @@ const {
   addMember,
   addBounty,
   getSingleDAO,
-  checkNFT
+  checkNFT,
+  getBounty,
 } = require("./services/polybase.js");
 
 app.use(cors());
@@ -76,6 +77,12 @@ app.post("/addBounty", async (req, res) => {
   const prize = req.body.prize;
   const bounty = await addBounty(title, details, deadline, prize, dao);
   res.send(bounty);
+});
+
+app.get("/getBounty", async (req, res) => {
+  const dao = req.query.dao;
+  const bounties = await getBounty(dao);
+  res.send(bounties);
 });
 
 app.listen(port, () => {

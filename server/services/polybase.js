@@ -13,7 +13,7 @@ async function getPolybaseDB() {
 async function createUser(publicKey) {
   const db = await getPolybaseDB();
   db.signer(async (signer) => {
-    return{
+    return {
       h: "eth-personal-sign",
       sig: process.env.SIGN,
     };
@@ -54,74 +54,119 @@ async function createDAO(name, description) {
 }
 
 async function getSingleDAO(dao) {
-    const db = await getPolybaseDB();
-    db.signer(async (signer) => {
-        return {
-            h: "eth-personal-sign",
-            sig: process.env.SIGN,
-        };
-        }
-    );
-    let DAO;
-    DAO = await db.collection("DAO").record(dao).get();
-    return DAO;
+  const db = await getPolybaseDB();
+  db.signer(async (signer) => {
+    return {
+      h: "eth-personal-sign",
+      sig: process.env.SIGN,
+    };
+  });
+  let DAO;
+  DAO = await db.collection("DAO").record(dao).get();
+  return DAO;
 }
 
-async function giveNFT(publicKey,dao){
-    const db = await getPolybaseDB();
-    db.signer(async (signer) => {
-        return {
-            h: "eth-personal-sign",
-            sig: process.env.SIGN,
-        };
-        }
-    );
-    let NFT;
-    NFT = await db.collection("NFT").create([publicKey+dao,db.collection("User").record(publicKey),db.collection("DAO").record(dao)]);
-    return NFT;
+async function giveNFT(publicKey, dao) {
+  const db = await getPolybaseDB();
+  db.signer(async (signer) => {
+    return {
+      h: "eth-personal-sign",
+      sig: process.env.SIGN,
+    };
+  });
+  let NFT;
+  NFT = await db
+    .collection("NFT")
+    .create([
+      publicKey + dao,
+      db.collection("User").record(publicKey),
+      db.collection("DAO").record(dao),
+    ]);
+  return NFT;
 }
 
-async function checkNFT(publicKey,dao){
-    const db = await getPolybaseDB();
-    db.signer(async (signer) => {
-        return {
-            h: "eth-personal-sign",
-            sig: process.env.SIGN,
-        };
-        }
-    );
-    let NFT;
-    NFT = await db.collection("NFT").record(publicKey+dao).get();
-    return NFT;
+async function checkNFT(publicKey, dao) {
+  const db = await getPolybaseDB();
+  db.signer(async (signer) => {
+    return {
+      h: "eth-personal-sign",
+      sig: process.env.SIGN,
+    };
+  });
+  let NFT;
+  NFT = await db
+    .collection("NFT")
+    .record(publicKey + dao)
+    .get();
+  return NFT;
 }
 
-async function addMember(publicKey,dao){
-    const db = await getPolybaseDB();
-    db.signer(async (signer) => {
-        return {
-            h: "eth-personal-sign",
-            sig: process.env.SIGN,
-        };
-        }
-    );
-    let member;
-    member = await db.collection("DAO").record(dao).call("addMember",[db.collection("NFT").record(publicKey+dao)]);
-    return member;
+async function addMember(publicKey, dao) {
+  const db = await getPolybaseDB();
+  db.signer(async (signer) => {
+    return {
+      h: "eth-personal-sign",
+      sig: process.env.SIGN,
+    };
+  });
+  let member;
+  member = await db
+    .collection("DAO")
+    .record(dao)
+    .call("addMember", [db.collection("NFT").record(publicKey + dao)]);
+  return member;
 }
 
-async function addBounty(title,details,deadline,prize,dao){
-    const db = await getPolybaseDB();
-    db.signer(async (signer) => {
-        return {
-            h: "eth-personal-sign",
-            sig: process.env.SIGN,
-        };
-        }
-    );
-    let bounty;
-    bounty = await db.collection("Bounty").create([Date.now().toString(),title,details,deadline,prize,db.collection("DAO").record(dao)]);
-    return bounty;
+async function addBounty(title, details, deadline, prize, dao) {
+  const db = await getPolybaseDB();
+  db.signer(async (signer) => {
+    return {
+      h: "eth-personal-sign",
+      sig: process.env.SIGN,
+    };
+  });
+  let bounty;
+  bounty = await db
+    .collection("Bounty")
+    .create([
+      Date.now().toString(),
+      title,
+      details,
+      deadline,
+      prize,
+      db.collection("DAO").record(dao),
+    ]);
+  return bounty;
 }
 
+async function getBounty(dao) {
+  const db = await getPolybaseDB();
+  db.signer(async (signer) => {
+    return {
+      h: "eth-personal-sign",
+      sig: process.env.SIGN,
+    };
+  });
+  let bounties;
+  bounties = await db.collection("Bounty").get();
+  let validBounties = [];
+  for (let i = 0; i < bounties.data.length; i++) {
+    if (bounties.data[i].data.dao.id == dao) {
+      validBounties.push(bounties.data[i]);
+    }
+  }
 
-module.exports = { createUser, getDAO, createDAO, giveNFT, addMember, addBounty, getSingleDAO, checkNFT};
+  return validBounties;
+}
+
+module.exports = {
+  createUser,
+  getDAO,
+  createDAO,
+  giveNFT,
+  addMember,
+  addBounty,
+  getSingleDAO,
+  checkNFT,
+  getBounty,
+};
