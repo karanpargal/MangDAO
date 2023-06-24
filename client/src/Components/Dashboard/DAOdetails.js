@@ -5,7 +5,7 @@ import DogeDAO from "../../Assests/DogeDAO.jpeg";
 import DAOcards from "./DAOcards";
 import Navbar from "../Navbar";
 import axios from "axios";
-import {motion} from "framer-motion"
+
 
 const DAOdetails = () => {
 
@@ -49,7 +49,14 @@ const DAOdetails = () => {
   return (
     <div>
       <Navbar />
-      <div className="grid grid-cols-3 gap-4 mx-10 pt-20">
+
+      <h1 className="text-5xl font-bold text-left pl-14 pt-12">
+        DAOs Available
+      </h1>
+      <p className="text-lg text-left pl-14 pt-2 font-medium text-gray-900">
+        Click on "Enter" to checkout their bounties. You need to own their NFT to be able to enter.
+      </p>
+      <div className="grid grid-cols-3 gap-4 mx-10 ">
         {DAOcardsData.map((data) => {
           return <DAOcards DAOcards={data} />;
         })}
