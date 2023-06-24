@@ -27,6 +27,13 @@ const DAObountiesCards = (props) => {
             <CurrencyDollarIcon className="w-[22px]  mr-2" />
             {props.DAObountiesCards.Rewards}
           </h2>
+          <div className="flex justify-end">
+          <button className="  font-semibold text-xl mb-4 bg-violet-700 text-white p-4 w-48 rounded-lg italic hover:text-black hover:bg-white hover:border-2 border-violet-700 ">  
+          {props.DAObountiesCards.Button}
+          </button>
+          </div>
+          
+         
         </div>
       </div>
     </div>

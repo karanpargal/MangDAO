@@ -11,6 +11,7 @@ const DAObountiesDetails = () => {
         "  Lorem ipsum dolor sit amet consectetur adipisicing elit Exceptu provident iure placeat blanditiis ea sint earum hic iste quibusdam exercitationem ",
       Time: "24 Days",
       Rewards:"400",
+      Button:"Submit"
     },
     {
       Image: Earth,
@@ -18,7 +19,8 @@ const DAObountiesDetails = () => {
       Description:
         "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Exceptur provident iure placeat blanditiis ea sint earum hic iste quibusdamexercitationem.",
       Time: "24 Days",
-      Rewards:"240"
+      Rewards:"240",
+      Button:"Submit"
     },
     {
       Image: Earth,
@@ -26,7 +28,8 @@ const DAObountiesDetails = () => {
       Description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exceptur provident iure placeat blanditiis ea sint earum hic iste quibusdamexercitatione",
       Time: "24 Days",
-      Rewards:"400"
+      Rewards:"400",
+      Button:"Submit"
     },
   ];
 
