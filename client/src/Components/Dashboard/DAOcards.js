@@ -44,7 +44,7 @@ const DAOcards = (props) => {
       >
         <div className="rounded-xl shadow-lg hover:shadow-2xl w-full border-2">
           <img
-            className="max-h-32 rounded-xl mt-[-4rem] object-contain mt-2 ml-6"
+            className="max-h-32 rounded-xl mt-[-4rem] object-contain mt-2 ml-6 border-2"
             src={props.DAOcards.Image}
           ></img>
           <h3 className="font-bold text-2xl my-6 pl-8">
