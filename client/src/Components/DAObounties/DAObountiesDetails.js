@@ -33,8 +33,6 @@ const DAObountiesDetails = () => {
     },
   ];
 
-  console.log(DAObountiesCardsData);
-
   return (
     <div className=" font-display" id="DAObountiesDetails">
       <div className=" justify-center gap-y-16 p-8 pt-2  ">

@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="Dashboard" element={<Dashboard />} />
         <Route path="DAOdetails" element={<DAOdetails />} />
-        <Route path="DAObounties" element={<DAObounties />} />
+        <Route path="/Dashboard/:dao" element={<DAObounties />} />
         <Route path="DAObountiesDetails" element={<DAObountiesDetails />} />
       
       </Routes>

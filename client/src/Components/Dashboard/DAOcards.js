@@ -29,17 +29,10 @@ const DAOcards = (props) => {
       });
       return null;
     }
-    toast.success("NFT Verified", {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
+
+    navigate(`/Dashboard/${props.DAOcards.Heading}`, {
+      state: { data: props.DAOcards },
     });
-    navigate(`/dashboard/${props.DAOcards.Heading}`, { data: props.DAOcards });
   };
 
   return (
