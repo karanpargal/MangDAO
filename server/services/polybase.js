@@ -13,7 +13,7 @@ async function getPolybaseDB() {
 async function createUser(publicKey) {
   const db = await getPolybaseDB();
   db.signer(async (signer) => {
-    return {
+    return{
       h: "eth-personal-sign",
       sig: process.env.SIGN,
     };

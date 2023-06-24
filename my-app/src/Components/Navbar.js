@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import "@particle-network/connect-react-ui/dist/index.css";
 import {
@@ -17,16 +17,17 @@ const Navbar = () => {
   const handleClose = () => setNav(!nav);
 
   async function handleConnect() {
-    // const { data } = await axios.post("http://localhost:8000/addBounty", {
-    //   dao: "TestDAO",
-    //   title: "TestBounty",
-    //   details: "TestBountyDetails",
-    //   deadline: 2,
-    //   prize: "100 USDC",
-    // });
-    const { data } = await axios.get("http://localhost:8000/getSingleDAO?dao=TestDAO")
+    const { data } = await axios.post("http://localhost:8000/createUser", {
+      publicKey: account,
+    });
     console.log(data);
   }
+
+  useEffect(() => {
+    if (account) {
+      handleConnect();
+    }
+  }, [account]);
 
   return (
     <div className="w-screen h-[80px] z-10 bg-slate-100 fixed drop-shadow-lg">
@@ -48,14 +49,6 @@ const Navbar = () => {
         </div>
         <div className="hidden md:flex pr-4 ">
           <ConnectButton />
-          <button
-            className="ml-4 bg-violet-500 text-white px-4 py-2 rounded-lg"
-            onClick={() => {
-              handleConnect();
-            }}
-          >
-            Connect to Polybase
-          </button>
         </div>
         <div className="md:hidden mr-4 ">
           {!nav ? <MenuIcon className="w-5" /> : <XIcon className="w-5" />}

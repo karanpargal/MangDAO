@@ -23,6 +23,12 @@ app.post("/getPolybaseDB", async (req, res) => {
   res.send(user);
 });
 
+app.post("/createUser", async (req, res) => {
+  const publicKey = req.body.publicKey;
+  const user = await createUser(publicKey);
+  res.send(user);
+});
+
 app.post("/createDAO", async (req, res) => {
   const name = req.body.name;
   const description = req.body.description;
