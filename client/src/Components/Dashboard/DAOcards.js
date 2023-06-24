@@ -47,11 +47,11 @@ const DAOcards = (props) => {
       <ToastContainer />
       <div
         Name="DAO"
-        className="bg-white grid grid-cols-1 relative gap-x-8 gap-y-16 px-4 pt-12 sm:pt-20 text-black text-left"
+        className="bg-white grid grid-cols-1 relative gap-x-8 gap-y-16 px-4 mt-20 sm:mt-20 text-black text-left hover:z-10"
       >
-        <div className="rounded-xl shadow-2xl w-full">
+        <div className="rounded-xl shadow-lg hover:shadow-2xl w-full">
           <img
-            className="max-h-32 rounded-xl mt-[-4rem] object-contain"
+            className="max-h-32 rounded-xl mt-[-4rem] object-contain mt-2 ml-6"
             src={props.DAOcards.Image}
           ></img>
           <h3 className="font-bold text-2xl my-6 pl-8">

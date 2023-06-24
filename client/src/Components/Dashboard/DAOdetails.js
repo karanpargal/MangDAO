@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import Superteam from "../../Assests/Superteam.jpg";
+import testDAO from "../../Assests/testDAO.jpg";
+import DogeDAO from "../../Assests/DogeDAO.jpeg";
 import DAOcards from "./DAOcards";
 import Navbar from "../Navbar";
 import axios from "axios";
@@ -28,8 +30,12 @@ const DAOdetails = () => {
       const { data } = await axios.get("http://localhost:8000/getDAO");
       console.log(data);
       const DAOdata = data.data.map((DAO) => {
+        let image = DogeDAO;
+        if(DAO.data.name == "TestDAO"){
+          image = testDAO;
+        }
         return {
-          Image: Superteam,
+          Image: image,
           Heading: DAO.data.name,
           Description: DAO.data.description,
         };
