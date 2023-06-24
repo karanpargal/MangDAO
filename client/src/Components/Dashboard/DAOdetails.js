@@ -1,5 +1,5 @@
 import React from "react";
-import Superteam from "../Assests/Superteam.jpg";
+import Superteam from "../../Assests/Superteam.jpg";
 import DAOcards from "./DAOcards";
 
 const DAOdetails = () => {
@@ -32,7 +32,7 @@ const DAOdetails = () => {
     },
 
     {
-      Image:  Superteam,
+      Image: Superteam,
       Heading: "Superteam",
       Description: "Lorem ipsum matilda elit da capsus whateva list gdreol ",
       Button: "Join",
@@ -46,6 +46,8 @@ const DAOdetails = () => {
         <DAOcards DAOcards={DAOcardsData[1]} />
         <DAOcards DAOcards={DAOcardsData[2]} />
         <DAOcards DAOcards={DAOcardsData[3]} />
+        <DAOcards DAOcards={DAOcardsData[4]} />
+       
       </div>
     </div>
   );

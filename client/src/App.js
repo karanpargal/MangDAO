@@ -2,8 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
 import Landing from "./Components/Landing";
-import Dashboard from "./Dashboard/Dashboard";
-import DAOdetails from "./Dashboard/DAOdetails";
+import Dashboard from "./Components/Dashboard/Dashboard";
+import DAOdetails from "./Components/Dashboard/DAOdetails";
 
 function App() {
   return (
