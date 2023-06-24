@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
 import { PhoneIcon, StarIcon } from "@heroicons/react/outline";
 import Earth from "../Assests/Earth.jpg";
+import Main from "../Assests/Main.jpeg";
 import Karan from "../Assests/Karan.jpeg";
 import { useAccount } from "@particle-network/connect-react-ui";
 import axios from "axios";
@@ -28,7 +29,7 @@ const Landing = () => {
       <Navbar />
       <div>
         <div className="flex bg-violet-100 w-full h-[660px] text-black text-left p-4 ">
-          <div className="grid md:grid-cols-2 max-w-[1240px]   ">
+          <div className="grid md:grid-cols-2 max-w-[1240px]  place-content-evenly">
             <div className="flex flex-col justify-center md:items-start w-full px-2 pl-20 py-8 ">
               <h1 className="py-3 text-3xl md:text-7xl font-bold">
                 GateBounty
@@ -41,7 +42,7 @@ const Landing = () => {
                   onClick={() => navigate("/dashboard")}
                   className="bg-violet-700 text-white px-8 py-3 rounded-full mt-8"
                 >
-                  Dashboard
+                  Checkout DAOs
                 </button>
               ) : (
                 <button className="bg-violet-700 text-white px-8 py-3 rounded-full mt-8">
@@ -50,7 +51,7 @@ const Landing = () => {
               )}
             </div>
             <div>
-              <img className="" alt="IMAGE"></img>
+              <img className="mix-blend-multiply ml-80" alt="IMAGE" src={Main}></img>
             </div>
           </div>
         </div>

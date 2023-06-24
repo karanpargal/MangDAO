@@ -33,7 +33,7 @@ const DAObounties = (props) => {
   }, []);
 
   return (
-    <div>
+    <div className="bg-violet-100 h-screen">
       <ToastContainer />
       <Navbar />
      

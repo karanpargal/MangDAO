@@ -40,9 +40,9 @@ const DAOcards = (props) => {
       <ToastContainer />
       <div
         Name="DAO"
-        className="bg-white grid grid-cols-1 relative gap-x-8 gap-y-16 px-4 mt-10 sm:mt-20 text-black text-left hover:z-10"
+        className=" grid grid-cols-1 relative gap-x-8 gap-y-16 px-4 mt-10 sm:mt-20 text-black text-left hover:z-10"
       >
-        <div className="rounded-xl shadow-lg hover:shadow-2xl w-full border-2">
+        <div className=" bg-white rounded-xl shadow-lg hover:shadow-2xl w-full border-2">
           <img
             className="max-h-32 rounded-xl mt-[-4rem] object-contain mt-2 ml-6 border-2"
             src={props.DAOcards.Image}
@@ -56,7 +56,7 @@ const DAOcards = (props) => {
 
           <div className="flex justify-end">
             <button
-              className="bg-slate-100 text-indigo-600 p-4 mt-4 rounded-lg border-2 flex items-center mr-5 mb-2 hover:bg-indigo-600 hover:text-white"
+              className="bg-violet-700 text-white p-4 mt-4 rounded-lg border-2 flex items-center mr-5 mb-2 hover:bg-indigo-600 hover:text-white"
               onClick={async () => {
                 await handleEnter();
               }}

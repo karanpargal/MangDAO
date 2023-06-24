@@ -16,7 +16,7 @@ const Navbar = () => {
             GateBounty
           </a>
         </div>
-        <div className="hidden md:flex pr-4 ">
+        <div className="hidden md:flex pr-4 justify-between">
           <ConnectButton />
         </div>
         <div className="md:hidden mr-4 ">
@@ -28,7 +28,7 @@ const Navbar = () => {
           !nav ? "hidden" : "absolute bg-zinc-200 w-full px-8 text-left"
         }
       >
-        <div className="flex flex-col my-4">
+        <div className="flex flex-col my-4 justify-between" >
           <ConnectButton />
         </div>
       </ul>

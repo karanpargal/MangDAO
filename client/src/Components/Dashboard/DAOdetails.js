@@ -44,7 +44,7 @@ const DAOdetails = () => {
   }, []);
 
   return (
-    <div>
+    <div className="bg-violet-100 h-screen">
       <Navbar />
       <ArrowLeftIcon
         className="h-10 w-10 ml-10 pt-2 text-gray-500 hover:text-gray-900 cursor-pointer"
