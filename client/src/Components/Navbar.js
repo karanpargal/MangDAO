@@ -12,7 +12,6 @@ import axios from "axios";
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
-  const provider = useParticleProvider();
   const account = useAccount();
   const handleClose = () => setNav(!nav);
 
