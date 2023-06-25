@@ -21,9 +21,8 @@ This provides them with a better community and helps them in making their submis
 
 # 🧠 Knowledge Primer
 
-- [Router Protocol](https://www.routerprotocol.com/)
-- [Zeeve](https://www.zeeve.io/)
-- [5irechain](https://www.5ire.org/)
+- [Polybase](https://polybase.xyz/)
+- [Particle Network](https://docs.particle.network/)
 
 # 💻 Tech Stack
 
