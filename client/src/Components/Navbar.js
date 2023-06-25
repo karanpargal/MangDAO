@@ -9,7 +9,7 @@ const Navbar = () => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className="w-screen h-[80px] z-10 bg-slate-100 drop-shadow-lg">
+    <div className="font-Raleway relative w-screen h-[80px] z-10 bg-slate-100 drop-shadow-lg">
       <div className="px-2 flex justify-between items-center w-full h-full">
         <div className="flex items-center">
           <a href="/" className="text-3xl font-bold mr-4 ml-10 sm:text-4xl">

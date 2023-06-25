@@ -20,10 +20,10 @@ const DAObountiesCards = (props) => {
             className="h-24 rounded-xl mt-[-2rem] object-contain"
             src={props.Image}
           ></img>
-          <h3 className="font-bold italic text-3xl my-6 pl-8">
+          <h3 className="font-bold  text-3xl my-6 pl-8">
             {props.Heading}
           </h3>
-          <p className="text-black text-xl pl-8 italic">{props.Description}</p>
+          <p className="text-black font-semibold text-xl pl-8 ">{props.Description}</p>
 
           <h2 className=" flex font-semibold text-xl my-6 pl-8 ">
             <ClockIcon className="w-[20px] font-semibold mr-2" />
@@ -36,7 +36,7 @@ const DAObountiesCards = (props) => {
           </h2>
           <div className="flex justify-end">
             <button
-              className="  font-semibold text-xl mb-4 bg-violet-700 text-white p-4 w-48 rounded-lg italic hover:text-black hover:bg-white hover:border-2 border-violet-700 "
+              className="  font-semibold text-xl mb-4 bg-violet-700 text-white p-4 w-48 rounded-lg hover:text-black hover:bg-white hover:border-2 border-violet-700 "
               onClick={() => setShowModal(true)}
             >
               {button}

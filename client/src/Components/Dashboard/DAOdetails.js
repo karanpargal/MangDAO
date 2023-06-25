@@ -44,7 +44,7 @@ const DAOdetails = () => {
   }, []);
 
   return (
-    <div className="bg-violet-100 h-screen">
+    <div className="font-Raleway bg-violet-100 h-screen">
       <Navbar />
       <ArrowLeftIcon
         className="h-10 w-10 ml-10 pt-2 text-gray-500 hover:text-gray-900 cursor-pointer"
@@ -53,7 +53,7 @@ const DAOdetails = () => {
       <h1 className="text-7xl font-bold text-left pl-14 pt-12">
         DAOs Available
       </h1>
-      <p className="text-2xl text-left pl-14 pt-8 font-medium text-gray-900">
+      <p className="text-2xl text-left pl-14 pt-8 font-semibold text-gray-900">
         Click on "Enter" to checkout their bounties. You need to own their NFT
         to be able to enter.
       </p>
@@ -62,7 +62,7 @@ const DAOdetails = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 3 }}
         variants={{
           hidden: { opacity: 0, x: -100 },
           visible: { opacity: 1, x: 0 },

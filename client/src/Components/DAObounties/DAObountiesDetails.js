@@ -7,7 +7,7 @@ const DAObountiesDetails = (props) => {
   console.log(props.bountyData);
 
   return (
-    <div className=" font-display" id="DAObountiesDetails">
+    <div className=" font-Raleway" id="DAObountiesDetails">
       <div className=" justify-center gap-y-16 p-8 pt-2  ">
         {
           props.bountyData.map((data) => {

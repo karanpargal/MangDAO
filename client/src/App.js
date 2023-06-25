@@ -10,7 +10,7 @@ import React from "react";
 
 function App() {
   return (
-    <div className="App">
+    <div className="font-Raleway App">
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="Dashboard" element={<DAOdetails />} />

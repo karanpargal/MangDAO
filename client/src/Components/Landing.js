@@ -53,7 +53,7 @@ const Landing = () => {
               {account ? (
                 <button
                   onClick={() => navigate("/dashboard")}
-                  className="bg-violet-700 text-white px-8 py-3 rounded-full mt-8"
+                  className="bg-white border-2 border-violet-700 text-black px-8 py-3 rounded-lg text-lg font-semibold mt-8 hover:text-white hover:bg-violet-600 hover:border-none "
                 >
                   Checkout DAOs
                 </button>
