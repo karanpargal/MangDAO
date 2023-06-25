@@ -7,6 +7,9 @@ import Main from "../Assests/Main.jpeg";
 import Karan from "../Assests/Karan.jpeg";
 import { useAccount } from "@particle-network/connect-react-ui";
 import axios from "axios";
+import Mehul from "../Assests/Mehul.jpeg";
+import Wini from "../Assests/Wini.jpeg";
+import { motion } from "framer-motion";
 
 const Landing = () => {
   const account = useAccount();
@@ -27,14 +30,24 @@ const Landing = () => {
   return (
     <div>
       <Navbar />
-      <div>
+      <div className="relative">
         <div className="flex bg-violet-100 w-full h-[660px] text-black text-left p-4 ">
           <div className="grid md:grid-cols-2 max-w-[1240px]  place-content-evenly">
-            <div className="flex flex-col justify-center md:items-start w-full px-2 pl-20 py-8 ">
-              <h1 className="py-3 text-3xl md:text-7xl font-bold">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 1 }}
+              variants={{
+                hidden: { opacity: 0, x: -100 },
+                visible: { opacity: 1, x: 0 },
+              }}
+              className="flex flex-col justify-center md:items-start w-full px-2 pl-20 py-8 "
+            >
+              <h1 className="py-3 text-3xl md:text-7xl font-bold font-Raleway ">
                 GateBounty
               </h1>
-              <p className="text-2xl mt-6">
+              <p className="text-2xl mt-6 font-Raleway">
                 Empowering Collaboration through Token-Gated DAO Opportunities
               </p>
               {account ? (
@@ -45,23 +58,37 @@ const Landing = () => {
                   Checkout DAOs
                 </button>
               ) : (
-                <button className="bg-violet-700 text-white px-8 py-3 rounded-full mt-8">
+                <button className="bg-white border-2 border-violet-700 text-black px-8 py-3 rounded-lg text-lg font-semibold mt-8 hover:text-white hover:bg-violet-600 hover:border-none  ">
                   Connect Wallet from Navbar
                 </button>
               )}
-            </div>
+            </motion.div>
             <div>
-              <img className="mix-blend-multiply ml-80" alt="IMAGE" src={Main}></img>
+              <img
+                className="mix-blend-multiply ml-[288px]"
+                alt="IMAGE"
+                src={Main}
+              ></img>
             </div>
           </div>
         </div>
 
-        <div className="bg-violet-100 text-justify">
-          <h1 className="text-5xl font-bold text-left pl-8 pt-12">Features</h1>
+        <div className="relative bg-violet-100 text-justify">
+          <h1 className="text-5xl font-bold text-left pl-8 pt-12 ">Features</h1>
 
-          <div className="w-full"></div>
-          <div className=" grid grid-cols-3 lg:grid-cols-3  gap-x-8 px-4   sm:pt-20 text px-10">
-            <div className="p-8 bg-white rounded-xl shadow-2xl border-2 border-violet-700 hover:scale-1.5">
+          <div className="w-full  z=2"></div>
+          <div className=" grid grid-cols-3 lg:grid-cols-3  gap-x-8 px-4   sm:pt-20 text px-10 ">
+            <motion.div
+              className="p-8 bg-white rounded-xl shadow-[5px_5px_0px_0px_rgba(109,40,217)] border-2 border-violet-700 hover:scale-1.5 "
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5 }}
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
               <StarIcon className="w-16 p-4 bg-violet-700 text-white rounded-lg mt-[-4rem]" />
               <h3 className="font-bold text-2xl my-6">Particle Auth</h3>
               <p className="text-gray-600 text-xl">
@@ -72,9 +99,19 @@ const Landing = () => {
                 platform, streamlining the onboarding experience and ensuring
                 authenticity.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="p-8 bg-white rounded-xl shadow-2xl border-2 border-violet-700">
+            <motion.div
+              className="p-8 bg-white rounded-xl shadow-[5px_5px_0px_0px_rgba(109,40,217)] border-2 border-violet-700"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
               <StarIcon className="w-16 p-4 bg-violet-700 text-white rounded-lg mt-[-4rem]" />
               <h3 className="font-bold text-2xl my-6">
                 Polybase NFT Token Gating
@@ -87,12 +124,22 @@ const Landing = () => {
                 incentivizes token holders to actively engage in the DAO
                 ecosystem and contribute to its growth.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="p-8 bg-white rounded-xl shadow-2xl border-2 border-violet-700 ">
+            <motion.div
+              className="p-8 bg-white rounded-xl shadow-[5px_5px_0px_0px_rgba(109,40,217)] border-2 border-violet-700 "
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ delay: 0.8, duration: 0.5 }}
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
               <StarIcon className="w-16 p-4 bg-violet-700 text-white rounded-lg mt-[-4rem]" />
               <h3 className="font-bold text-2xl my-6">
-                Trustworthy Submission Verification
+                Trustworthy verification Submission
               </h3>
               <p className="text-gray-600 text-xl">
                 To ensure the quality and trustworthiness of submissions within
@@ -106,7 +153,7 @@ const Landing = () => {
                 and enhances the overall credibility of the DAO's outcomes and
                 deliverables.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
 
@@ -117,7 +164,14 @@ const Landing = () => {
 
           <div className="w-full"></div>
           <div className=" grid grid-cols-3 lg:grid-cols-3  gap-x-8 px-4   sm:pt-20 text px-10">
-            <div className="p-8 bg-white rounded-xl shadow-2xl border-2 border-violet-700 hover:scale-1.5">
+            <motion.div className="p-8 bg-white rounded-xl shadow-[5px_5px_0px_0px_rgba(109,40,217)] border-2 border-violet-700 hover:scale-1.5" initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ delay:0.8,duration: 0.5 }}
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: { opacity: 1, y: 0 },
+              }}>
               <StarIcon className="w-16 p-4 bg-violet-700 text-white rounded-lg mt-[-4rem]" />
               <h3 className="font-bold text-2xl my-6">Reputation System</h3>
               <p className="text-gray-600 text-xl">
@@ -129,9 +183,17 @@ const Landing = () => {
                 scores can unlock additional benefits and opportunities within
                 the platform.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="p-8 bg-white rounded-xl shadow-2xl border-2 border-violet-700">
+            <motion.div className="p-8 bg-white rounded-xl shadow-[5px_5px_0px_0px_rgba(109,40,217)] border-2 border-violet-700"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay:0.4,duration: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0 },
+            }}>
               <StarIcon className="w-16 p-4 bg-violet-700 text-white rounded-lg mt-[-4rem]" />
               <h3 className="font-bold text-2xl my-6">
                 Smart Contract Automation
@@ -144,9 +206,19 @@ const Landing = () => {
                 executing bounty-related processes, reducing the need for manual
                 intervention and streamlining operations.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="p-8 bg-white rounded-xl shadow-2xl border-2 border-violet-700 ">
+            <motion.div
+              className="p-8 bg-white rounded-xl shadow-[5px_5px_0px_0px_rgba(109,40,217)] border-2 border-violet-700 "
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5 }}
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
               <StarIcon className="w-16 p-4 bg-violet-700 text-white rounded-lg mt-[-4rem]" />
               <h3 className="font-bold text-2xl my-6">
                 Collaborative Project Management
@@ -163,45 +235,47 @@ const Landing = () => {
                 and enhances the overall credibility of the DAO's outcomes and
                 deliverables.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
         <section class="bg-violet-100 text-black">
-          <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
-            <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-              <h2 class="mb-4 text-4xl tracking-tight font-extrabold">
+          <div class="py-8 px-4 mx-auto lg:py-16 lg:px-6 ">
+            <div class="mx-auto  mb-8 lg:mb-16">
+              <h1 class="text-5xl font-bold text-left pl-8  pt-12  ">
                 Our Team
-              </h2>
+              </h1>
             </div>
-            <div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
-              <div class="items-center bg-gray-50 rounded-lg shadow sm:flex">
+            <div class="grid  gap-8 mb-6 lg:mb-16 md:grid-cols-3 ">
+              <div class="items-center h-72 bg-gray-50 rounded-lg shadow-[3px_3px_0px_0px_rgba(109,40,217)] sm:flex border-2 border-violet-700 ">
                 <a href="#">
                   <img
-                    class="w-60 rounded-lg sm:rounded-none sm:rounded-l-lg"
+                    class="w-[390px] h-[285px] rounded-xl sm:rounded-none sm:rounded-l-lg"
                     src={Karan}
                     alt="Bonnie Avatar"
                   />
                 </a>
-                <div class="p-5">
-                  <h3 class="text-xl font-bold tracking-tight text-gray-900">
+                <div class="p-5 ">
+                  <h3 class="text-2xl font-bold tracking-tight text-gray-900">
                     <a href="#">Karan Pargal</a>
                   </h3>
-                  <span class="text-gray-500 ">Full Stack Developer</span>
+                  <span class="text-gray-500  text-lg">
+                    Full Stack Developer
+                  </span>
                   <p class="mt-3 mb-4 font-light text-gray-500 ">
                     Talent wins games, but teamwork wins championships.
                   </p>
                 </div>
               </div>
-              <div class="items-center bg-gray-50 rounded-lg shadow sm:flex ">
+              <div class="items-center bg-gray-50 rounded-lg shadow-[3px_3px_0px_0px_rgba(109,40,217)] sm:flex border-2 border-violet-700">
                 <a href="#">
                   <img
-                    class="w-60 rounded-lg sm:rounded-none sm:rounded-l-lg"
-                    src={Karan}
+                    class="w-[390px] h-[285px] rounded-xl sm:rounded-none sm:rounded-l-lg"
+                    src={Wini}
                     alt="Jese Avatar"
                   />
                 </a>
                 <div class="p-5">
-                  <h3 class="text-xl font-bold tracking-tight text-gray-900 ">
+                  <h3 class="text-2xl font-bold  tracking-tight text-gray-900 ">
                     <a href="#">Yashaswini Singh Shaktawat</a>
                   </h3>
                   <span class="text-gray-500 ">Frontend Developer</span>
@@ -210,19 +284,19 @@ const Landing = () => {
                   </p>
                 </div>
               </div>
-              <div class="items-center bg-gray-50 rounded-lg shadow sm:flex ">
+              <div class="items-center bg-gray-50 rounded-lg shadow-[3px_3px_0px_0px_rgba(109,40,217)] sm:flex border-2 border-violet-700">
                 <a href="#">
                   <img
-                    class="w-60 rounded-lg sm:rounded-none sm:rounded-l-lg"
-                    src={Karan}
+                    class="w-[390px] h-[285px] rounded-xl sm:rounded-none sm:rounded-l-lg"
+                    src={Mehul}
                     alt="Michael Avatar"
                   />
                 </a>
                 <div class="p-5">
-                  <h3 class="text-xl font-bold tracking-tight text-gray-900 ">
+                  <h3 class="text-2xl font-bold tracking-tight text-gray-900 ">
                     <a href="#">Mehul Dadlani</a>
                   </h3>
-                  <span class="text-gray-500 ">App Developer</span>
+                  <span class="text-gray-500 text-lg">App Developer</span>
                   <p class="mt-3 mb-4 font-light text-gray-500 ">
                     Individually, we are one drop. Together, we are an ocean
                   </p>

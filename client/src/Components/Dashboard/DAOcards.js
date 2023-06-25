@@ -42,7 +42,7 @@ const DAOcards = (props) => {
         Name="DAO"
         className=" grid grid-cols-1 relative gap-x-8 gap-y-16 px-4 mt-10 sm:mt-20 text-black text-left hover:z-10"
       >
-        <div className=" bg-white rounded-xl shadow-lg hover:shadow-2xl w-full border-2">
+        <div className=" bg-white rounded-xl shadow-lg w-full shadow-[5px_5px_0px_0px_rgba(109,40,217)]">
           <img
             className="max-h-32 rounded-xl mt-[-4rem] object-contain mt-2 ml-6 border-2"
             src={props.DAOcards.Image}
@@ -56,12 +56,12 @@ const DAOcards = (props) => {
 
           <div className="flex justify-end">
             <button
-              className="bg-violet-700 text-white p-4 mt-4 rounded-lg border-2 flex items-center mr-5 mb-2 hover:bg-indigo-600 hover:text-white"
+              className="bg-white text-black text-lg border-2 border-violet-700 p-2 w-32 mt-4 pl-8 rounded-lg border-2 flex items-center mr-5 mb-4 hover:bg-violet-600 hover:text-white hover:border-none"
               onClick={async () => {
                 await handleEnter();
               }}
             >
-              <p className=" mr-2">Enter</p>
+              <p className=" mr-4">Enter</p>
               <ArrowSmRightIcon className=" h-6 w-6" />
             </button>
           </div>

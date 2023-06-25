@@ -15,6 +15,11 @@ module.exports = {
       '2xl': '1536px',
 
     },
+    fontFamily:{
+      Belanosima:["Belanosima","serif"],
+      Raleway:["Raleway","serif"]
+
+    },
     extend: {},
   },
   plugins: [],
